@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swap.gui.controller.PairingController">
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints hgrow="ALWAYS" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
+    <children>
+        <ToolBar GridPane.columnIndex="1" GridPane.valignment="TOP">
+            <items>
+                <ImageView fx:id="torImage" fitHeight="16.0" fitWidth="16.0" preserveRatio="true">
+                    <image>
+                        <Image url="@images/tor.png" />
+                    </image>
+                    <viewport>
+                        <Rectangle2D width="256.0" />
+                    </viewport>
+                </ImageView>
+            </items>
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+        </ToolBar>
+        <VBox alignment="CENTER" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <ImageView fx:id="swapsLogo" fitHeight="300.0" fitWidth="300.0" preserveRatio="true" VBox.vgrow="NEVER">
+                <image>
+                    <Image url="@images/swaps-logo.png" />
+                </image>
+                <viewport>
+                    <Rectangle2D width="256.0" />
+                </viewport>
+            </ImageView>
+            <Label text="Samourai Swaps" textFill="#c12727">
+                <font>
+                    <Font name="Arial Bold" size="36.0" />
+                </font>
+            </Label>
+            <TextField fx:id="swapsPairingTextField" maxWidth="256" promptText="Samourai Swaps Pairing Payload">
+                <font>
+                    <Font name="Arial" size="14.0" />
+                </font>
+            </TextField>
+            <PasswordField fx:id="walletPassphraseTextField" maxWidth="256" promptText="BIP39 Passphrase">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </PasswordField>
+            <HBox alignment="CENTER">
+                <children>
+                    <Button fx:id="pairingButton" onAction="#onPairingButtonClick" text="Pair" />
+                    <CheckBox fx:id="startAsbCheckbox" mnemonicParsing="false" text="Start ASB" textFill="WHITE">
+                        <HBox.margin>
+                            <Insets left="8.0" />
+                        </HBox.margin>
+                        <tooltip>
+                            <Tooltip text="Automated Swap Backend - Market Maker (Sell XMR)" />
+                        </tooltip>
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </CheckBox>
+                </children>
+            </HBox>
+
+            <Label fx:id="startText">
+                <font>
+                    <Font name="Arial Italic" size="18.0" />
+                </font>
+            </Label>
+            <ProgressBar fx:id="rpcDownloadProgress" prefWidth="200.0" progress="0.0" />
+        </VBox>
+    </children>
+</GridPane>

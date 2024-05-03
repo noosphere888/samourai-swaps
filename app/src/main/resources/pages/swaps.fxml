@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import swap.gui.node.*?>
+
+<GridPane fx:id="swapsPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swap.gui.controller.pages.SwapsController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50" />
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50" />
+    </columnConstraints>
+    <children>
+        <VBox GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <VBox alignment="CENTER">
+                            <children>
+                                <Label text="SWAPS_DEPOSIT Balance" textFill="#c12727">
+                                    <font>
+                                        <Font name="Arial Bold" size="14.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="6.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <TextField fx:id="depositBtcBalanceText" alignment="CENTER" editable="false" maxWidth="134.0">
+                                    <font>
+                                        <Font name="Arial Bold" size="14.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                </TextField>
+                            </children>
+                            <HBox.margin>
+                                <Insets right="4.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="114.0" layoutY="10.0">
+                            <children>
+                                <Label text="SWAPS_REFUNDS Balance:" textFill="#c12727">
+                                    <font>
+                                        <Font name="Arial Bold" size="14.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="6.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <TextField fx:id="refundsBtcBalanceText" alignment="CENTER" editable="false" maxWidth="134.0">
+                                    <font>
+                                        <Font name="Arial Bold" size="14.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                    </padding>
+                                </TextField>
+                            </children>
+                            <HBox.margin>
+                                <Insets left="24.0" />
+                            </HBox.margin>
+                        </VBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="8.0" />
+                    </VBox.margin>
+                </HBox>
+                <Label text="Monero Address" textFill="#c12727">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="6.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="moneroAddressTextField" promptText="87BqQYkugEzh6Tuyotm2uc3DzJzKM6MuZaC161e6u1TsQxxPmXVPHpdNRyK47JY4d1hhbe25YVz4e9vTXCLDxvHkRXEAeBC">
+                    <font>
+                        <Font name="Arial" size="12.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets bottom="8.0" />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="12.0" />
+                    </VBox.margin>
+                </TextField>
+                <Label text="Monero Seller" textFill="#c12727">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="6.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="libp2pPeerTextField" promptText="Choose seller from list, or paste their libp2p address here">
+                    <font>
+                        <Font name="Arial" size="12.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="18.0" />
+                    </VBox.margin>
+                </TextField>
+                <Label disable="true" layoutX="10.0" layoutY="134.0" text="From account (optional)" textFill="#c12727">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="fromAccount" disable="true" prefWidth="530.0">
+                    <VBox.margin>
+                        <Insets bottom="12.0" />
+                    </VBox.margin>
+                </ComboBox>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Button fx:id="startButton" disable="true" mnemonicParsing="false" onAction="#onStartButtonClick" text="Buy Monero">
+                            <HBox.margin>
+                                <Insets right="6.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#onClearButtonClick" text="Clear">
+                            <HBox.margin>
+                                <Insets right="12.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Label textFill="#c12727" visible="false" HBox.hgrow="ALWAYS" fx:id="xmrPrice">
+                            <font>
+                                <Font name="Arial" size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets right="15.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="btcPrice" textFill="#c12727" visible="false" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font name="Arial" size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
+                    <children>
+                        <ProgressBar fx:id="swapProgressBar" prefHeight="26.0" prefWidth="360.0" progress="0.0" visible="false">
+                            <VBox.margin>
+                                <Insets bottom="14.0" />
+                            </VBox.margin>
+                        </ProgressBar>
+                        <TextField fx:id="swapMessage" alignment="CENTER" editable="false" managed="false" maxWidth="220.0" visible="false">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </TextField>
+                        <ImageView fx:id="swapImage" fitHeight="100.0" fitWidth="100.0" managed="false" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </ImageView>
+                        <FontAwesomeIconView fx:id="swapIcon" fill="WHITE" glyphName="EXCHANGE" managed="false" size="96" visible="false">
+                            <VBox.margin>
+                                <Insets top="4.0" />
+                            </VBox.margin>
+                        </FontAwesomeIconView>
+                        <TextField fx:id="swapText" alignment="CENTER" editable="false" maxWidth="220.0" visible="false">
+                            <font>
+                                <Font name="Arial" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <Button fx:id="cancelButton" disable="true" mnemonicParsing="false" onAction="#onStopButtonClick" text="Disconnect" visible="false">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+            <GridPane.margin>
+                <Insets right="5.0" />
+            </GridPane.margin>
+        </VBox>
+
+        <VBox GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <children>
+                <Label text="Sellers" textFill="#c12727">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </Label>
+                <PercentTableView fx:id="sellerTable" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                    <VBox.margin>
+                        <Insets bottom="6.0" top="6.0" />
+                    </VBox.margin>
+                </PercentTableView>
+                <HBox alignment="CENTER_LEFT">
+                    <children>
+                        <Button fx:id="sellerRefreshButton" mnemonicParsing="false" onAction="#onRefreshSellersButtonClick">
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" />
+                            </graphic>
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Label fx:id="refreshSellerText" textFill="#c12727">
+                            <font>
+                                <Font name="Arial" size="12.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="totalXmrForSaleInBtcText" alignment="CENTER_RIGHT" layoutX="367.0" layoutY="10.0" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="4.0" left="5.0" right="5.0" top="4.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                        <Label alignment="CENTER_RIGHT" textFill="WHITE" visible="false" fx:id="xmrSpotPriceText">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="4.0" left="5.0" right="5.0" top="4.0" />
+                            </padding>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+            <GridPane.margin>
+                <Insets left="5.0" />
+            </GridPane.margin>
+        </VBox>
+    </children>
+    <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES" />
+    </rowConstraints>
+</GridPane>

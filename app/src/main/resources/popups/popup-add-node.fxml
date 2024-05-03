@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="215.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swap.gui.controller.popups.PopupAddNode">
+
+    <VBox alignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" HBox.hgrow="NEVER">
+        <children>
+            <Label text="Node Address" textFill="#c12727">
+                <font>
+                    <Font name="Arial Bold" size="14.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="6.0" />
+                </VBox.margin>
+            </Label>
+            <TextField fx:id="urlText" alignment="CENTER" maxWidth="530.0" promptText="http://">
+                <font>
+                    <Font name="Arial" size="14.0" />
+                </font>
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+                <VBox.margin>
+                    <Insets bottom="12.0" />
+                </VBox.margin>
+            </TextField>
+
+            <Label fx:id="portFieldLabel" text="Port" textFill="#c12727">
+                <font>
+                    <Font name="Arial Bold" size="14.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="6.0" />
+                </VBox.margin>
+            </Label>
+            <TextField fx:id="portText" alignment="CENTER" maxWidth="100.0" promptText="42069">
+                <font>
+                    <Font name="Arial" size="14.0" />
+                </font>
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+                <VBox.margin>
+                    <Insets bottom="12.0" />
+                </VBox.margin>
+            </TextField>
+
+            <HBox alignment="CENTER">
+                <Button onAction="#save" text="Save">
+                </Button>
+                <Button fx:id="cancelButton" onAction="#closeWindow" text="Cancel">
+                    <HBox.margin>
+                        <Insets left="6.0" />
+                    </HBox.margin>
+                </Button>
+                <VBox.margin>
+                    <Insets top="30.0" />
+                </VBox.margin>
+            </HBox>
+        </children>
+    </VBox>
+
+</AnchorPane>

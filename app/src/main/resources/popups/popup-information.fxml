@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="215.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swap.gui.controller.popups.PopupInformation">
+
+    <VBox alignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" HBox.hgrow="NEVER">
+        <children>
+            <Label fx:id="titleText" text="Title Text" textFill="#c12727" wrapText="true">
+                <font>
+                    <Font size="28.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="6.0" />
+                </VBox.margin>
+            </Label>
+         <Label fx:id="bodyText" layoutX="223.0" layoutY="10.0" text="Body Text" textFill="WHITE" wrapText="true">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+
+            <HBox alignment="CENTER">
+                <Button fx:id="closeButton" onAction="#closeWindow" text="Close">
+                    <HBox.margin>
+                        <Insets left="6.0" />
+                    </HBox.margin>
+                </Button>
+                <VBox.margin>
+                    <Insets top="30.0" />
+                </VBox.margin>
+            </HBox>
+        </children>
+    </VBox>
+
+</AnchorPane>

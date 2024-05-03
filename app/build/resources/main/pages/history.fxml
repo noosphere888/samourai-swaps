@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="historyPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="swap.gui.controller.pages.HistoryController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES" />
+    </rowConstraints>
+    <VBox GridPane.columnIndex="0">
+        <GridPane.margin>
+            <Insets />
+        </GridPane.margin>
+        <HBox fx:id="historyHBox">
+            <children>
+                <VBox HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Swap History" textFill="#c12727">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="6.0" />
+                            </VBox.margin>
+                        </Label>
+                        <TableView fx:id="historyTable">
+                            <columns>
+                                <TableColumn fx:id="swapIdColumn" editable="false" text="Swap ID" />
+                                <TableColumn fx:id="statusColumn" editable="false" text="Status" />
+                            </columns>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                            <VBox.margin>
+                                <Insets bottom="6.0" />
+                            </VBox.margin>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Button fx:id="historyRefreshButton" mnemonicParsing="false" onAction="#refreshSwapHistoryButton">
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" />
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Button>
+                                <Label fx:id="refreshHistoryText" textFill="#c12727">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <PieChart fx:id="historyPieChart" animated="false" labelsVisible="false" legendSide="RIGHT" legendVisible="false">
+                    <HBox.margin>
+                        <Insets bottom="14.0" top="12.0" />
+                    </HBox.margin>
+                </PieChart>
+            </children>
+        </HBox>
+
+        <HBox fx:id="asbHistoryHBox">
+            <children>
+                <VBox HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="ASB History" textFill="#c12727">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="6.0" top="12.0" />
+                            </VBox.margin>
+                        </Label>
+                        <TableView fx:id="asbHistoryTable" editable="true" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="asbSwapIdColumn" editable="false" text="Swap ID" />
+                                <TableColumn fx:id="asbStatusColumn" editable="false" text="Status" />
+                            </columns>
+                            <VBox.margin>
+                                <Insets bottom="6.0" />
+                            </VBox.margin>
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <Button fx:id="asbHistoryRefreshButton" mnemonicParsing="false" onAction="#refreshAsbHistoryButton">
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" />
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Button>
+                                <Label fx:id="asbRefreshHistoryText" textFill="#c12727">
+                                    <font>
+                                        <Font name="Arial" size="12.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <PieChart fx:id="asbPieChart" animated="false" labelsVisible="false" legendSide="RIGHT" legendVisible="false">
+                    <HBox.margin>
+                        <Insets bottom="14.0" top="24.0" />
+                    </HBox.margin>
+                </PieChart>
+            </children>
+        </HBox>
+    </VBox>
+</GridPane>

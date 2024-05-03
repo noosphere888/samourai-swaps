@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.fxmisc.flowless.*?>
+<?import org.fxmisc.richtext.*?>
+
+<GridPane fx:id="mainPane" alignment="CENTER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swap.gui.controller.MainController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="2.0" />
+        <RowConstraints percentHeight="5.0" />
+        <RowConstraints percentHeight="68.0" />
+        <RowConstraints percentHeight="25.0" />
+    </rowConstraints>
+    <children>
+        <Label text="This user interface is a development/testing UI! The final UI is still in development. Start with small trades to test and get comfortable with the process." textFill="#ff9500">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+            <padding>
+                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+            </padding>
+        </Label>
+        <HBox fx:id="navBar" alignment="CENTER_LEFT" GridPane.rowIndex="1">
+            <children>
+                <Button fx:id="swapsNav" maxHeight="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onAction="#swapsPage" prefHeight="40.0" prefWidth="110.0" text="Swaps">
+                    <HBox.margin>
+                        <Insets bottom="-3.0" left="-4.0" right="1.0" top="-4.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="EXCHANGE" size="10">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                        </FontAwesomeIconView>
+                    </graphic>
+                    <font>
+                        <Font name="Arial Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Button fx:id="liquidityNav" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#liquidityPage" prefHeight="40.0" prefWidth="110.0" text="Liquidity">
+                    <HBox.margin>
+                        <Insets bottom="-3.0" right="1.0" top="-4.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="BANK" size="10">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                        </FontAwesomeIconView>
+                    </graphic>
+                </Button>
+                <Button fx:id="historyNav" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#historyPage" prefHeight="40.0" prefWidth="110.0" text="History">
+                    <HBox.margin>
+                        <Insets bottom="-3.0" right="1.0" top="-4.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="LIST" size="10">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                        </FontAwesomeIconView>
+                    </graphic>
+                    <font>
+                        <Font name="Arial Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Button fx:id="withdrawNav" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#withdrawPage" prefHeight="40.0" prefWidth="110.0" text="Withdraw">
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SEND" size="10">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                        </FontAwesomeIconView>
+                    </graphic>
+                    <font>
+                        <Font name="Arial Bold" size="13.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets bottom="-3.0" right="1.0" top="-4.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="settingsNav" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#settingsPage" prefHeight="40.0" prefWidth="110.0" text="Settings">
+                    <HBox.margin>
+                        <Insets bottom="-3.0" top="-4.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="COG" size="10">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </FontAwesomeIconView>
+                    </graphic>
+                </Button>
+
+                <ImageView fx:id="torImage" fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
+                    <image>
+                        <Image url="@images/tor.png" />
+                    </image>
+                    <viewport>
+                        <Rectangle2D width="256.0" />
+                    </viewport>
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </ImageView>
+
+                <ImageView fx:id="whirlpoolImage" fitHeight="20.0" fitWidth="20.0" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@images/whirlpool-logo.png" />
+                    </image>
+                    <viewport>
+                        <Rectangle2D width="256.0" />
+                    </viewport>
+                    <HBox.margin>
+                        <Insets left="4.0" />
+                    </HBox.margin>
+                </ImageView>
+
+                <FontAwesomeIconView fx:id="asbIcon" fill="WHITE" glyphName="BULLSEYE" size="20" visible="false">
+                    <HBox.margin>
+                        <Insets left="4.0" />
+                    </HBox.margin>
+                </FontAwesomeIconView>
+            </children>
+            <padding>
+                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+            </padding>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+        </HBox>
+        <AnchorPane fx:id="contentPane" GridPane.rowIndex="2">
+            <children>
+            </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+        </AnchorPane>
+        <VBox fx:id="logsView" GridPane.rowIndex="3">
+            <Label text="Logs" textFill="#c12727">
+                <font>
+                    <Font name="Arial Bold" size="14.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="6.0" />
+                </VBox.margin>
+            </Label>
+
+            <VirtualizedScrollPane fx:id="vScrollPane" VBox.vgrow="ALWAYS" >
+                <content>
+                    <InlineCssTextArea fx:id="logs" editable="false" wrapText="true" style="-fx-background-color: transparent;">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </InlineCssTextArea>
+                </content>
+            </VirtualizedScrollPane>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+        </VBox>
+    </children>
+</GridPane>

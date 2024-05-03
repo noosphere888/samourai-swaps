@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="withdrawPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swap.gui.controller.pages.WithdrawController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50" />
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50" />
+    </columnConstraints>
+    <children>
+        <VBox GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+            <GridPane.margin>
+                <Insets right="5.0" />
+            </GridPane.margin>
+
+            <Label text="Bitcoin Address" textFill="#c12727">
+                <font>
+                    <Font name="Arial Bold" size="14.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="6.0" />
+                </VBox.margin>
+            </Label>
+            <TextField fx:id="btcAddressTextField" promptText="1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa">
+                <font>
+                    <Font name="Arial" size="12.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets bottom="8.0" />
+                </opaqueInsets>
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+                <VBox.margin>
+                    <Insets bottom="12.0" />
+                </VBox.margin>
+            </TextField>
+            <Label layoutX="10.0" layoutY="10.0" text="Amount (BTC)" textFill="#c12727">
+                <font>
+                    <Font name="Arial Bold" size="14.0" />
+                </font>
+            <VBox.margin>
+               <Insets bottom="6.0" />
+            </VBox.margin>
+            </Label>
+            <TextField fx:id="btcAmountTextField" layoutX="10.0" layoutY="36.0" promptText="0.001">
+                <font>
+                    <Font name="Arial" size="12.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets bottom="8.0" />
+                </opaqueInsets>
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+                <VBox.margin>
+                    <Insets bottom="12.0" />
+                </VBox.margin>
+            </TextField>
+            <Label layoutX="10.0" layoutY="75.0" text="Fee rate (sat/vbyte)" textFill="#c12727">
+                <font>
+                    <Font name="Arial Bold" size="14.0" />
+                </font>
+            <VBox.margin>
+               <Insets bottom="6.0" />
+            </VBox.margin>
+            </Label>
+            <TextField fx:id="btcFeeTextField" layoutX="10.0" layoutY="95.0" promptText="45">
+                <font>
+                    <Font name="Arial" size="12.0" />
+                </font>
+                <opaqueInsets>
+                    <Insets bottom="8.0" />
+                </opaqueInsets>
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+                <VBox.margin>
+                    <Insets bottom="12.0" />
+                </VBox.margin>
+            </TextField>
+         <Label layoutX="10.0" layoutY="134.0" text="From account" textFill="#c12727">
+            <font>
+               <Font name="Arial Bold" size="14.0" />
+            </font>
+         </Label>
+            <ComboBox fx:id="whirlpoolAccount" prefWidth="530.0">
+            <VBox.margin>
+               <Insets bottom="12.0" />
+            </VBox.margin></ComboBox>
+            <HBox alignment="CENTER_LEFT">
+                <children>
+                    <Button fx:id="withdrawButton" mnemonicParsing="false" onAction="#onWithdrawButtonClick" prefWidth="110.0" text="Withdraw">
+                        <HBox.margin>
+                            <Insets right="20.0" />
+                        </HBox.margin>
+                    </Button>
+                </children>
+            </HBox>
+         <Button fx:id="displayZpubsButton" mnemonicParsing="false" onAction="#onShowZpubsClick" prefWidth="110.0" text="Show ZPUBs">
+            <VBox.margin>
+               <Insets bottom="12.0" top="12.0" />
+            </VBox.margin>
+         </Button>
+         <VBox fx:id="zpubs" visible="false">
+             <Label text="Swaps Deposit ZPUB" textFill="#c12727">
+                 <font>
+                     <Font name="Arial Bold" size="14.0" />
+                 </font>
+                 <VBox.margin>
+                     <Insets bottom="6.0" />
+                 </VBox.margin>
+             </Label>
+             <TextField fx:id="swapsDepositZpub" editable="false">
+                 <font>
+                     <Font name="Arial" size="12.0" />
+                 </font>
+                 <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                 </padding>
+                 <VBox.margin>
+                     <Insets bottom="12.0" />
+                 </VBox.margin>
+             </TextField>
+             <Label text="Swaps Refunds ZPUB" textFill="#c12727">
+                 <font>
+                     <Font name="Arial Bold" size="14.0" />
+                 </font>
+             </Label>
+             <TextField fx:id="swapsRefundsZpub" editable="false">
+                 <font>
+                     <Font name="Arial" size="12.0" />
+                 </font>
+                 <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                 </padding>
+                 <VBox.margin>
+                     <Insets bottom="12.0" />
+                 </VBox.margin>
+             </TextField>
+             <Label text="Swaps ASB ZPUB" textFill="#c12727">
+                 <font>
+                     <Font name="Arial Bold" size="14.0" />
+                 </font>
+             </Label>
+             <TextField fx:id="swapsAsbZpub" editable="false">
+                 <font>
+                     <Font name="Arial" size="12.0" />
+                 </font>
+                 <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                 </padding>
+                 <VBox.margin>
+                     <Insets bottom="12.0" />
+                 </VBox.margin>
+             </TextField>
+         </VBox>
+        </VBox>
+    </children>
+    <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES" />
+    </rowConstraints>
+</GridPane>

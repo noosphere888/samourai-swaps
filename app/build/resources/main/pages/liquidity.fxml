@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="liquidityPane" alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swap.gui.controller.pages.LiquidityController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <VBox alignment="TOP_CENTER">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="BANK" size="36">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets right="12.0" />
+                            </HBox.margin>
+                        </FontAwesomeIconView>
+
+                        <Label alignment="CENTER" text="Automated Swap Backend - Market Maker" textAlignment="CENTER" textFill="#c12727">
+                            <font>
+                                <Font name="Arial Bold" size="36.0" />
+                            </font>
+                        </Label>
+
+                        <FontAwesomeIconView fill="WHITE" glyphName="BANK" size="36">
+                            <font>
+                                <Font name="Arial Bold" size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="12.0" />
+                            </HBox.margin>
+                        </FontAwesomeIconView>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </HBox>
+
+                <VBox fx:id="asbBox" alignment="TOP_CENTER" managed="false" visible="false">
+                    <children>
+                        <HBox alignment="TOP_CENTER">
+                            <children>
+                                <TextField fx:id="btcBalanceLarge" alignment="CENTER" editable="false" prefWidth="400.0">
+                                    <font>
+                                        <Font name="Arial Bold" size="28.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                    <padding>
+                                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                    </padding>
+                                </TextField>
+                                <TextField alignment="CENTER" editable="false" prefWidth="400.0" fx:id="xmrBalanceLarge">
+                                    <font>
+                                        <Font name="Arial Bold" size="28.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets left="22.0" />
+                                    </HBox.margin>
+                                    <padding>
+                                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                    </padding>
+                                </TextField>
+                            </children>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </HBox>
+
+                        <TextField fx:id="externalAddress" alignment="CENTER" editable="false" maxWidth="822.0" prefWidth="822.0">
+                            <font>
+                                <Font name="Arial Bold" size="18.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets top="12.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <TextField alignment="CENTER" editable="false" maxWidth="822.0" prefHeight="39.0" fx:id="xmrAddress">
+                            <font>
+                                <Font name="Arial Bold" size="12.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="24.0" top="12.0" />
+                            </VBox.margin>
+                        </TextField>
+
+                        <HBox alignment="TOP_CENTER" maxWidth="822.0">
+                            <children>
+                                <VBox alignment="CENTER">
+                                    <children>
+                                        <HBox alignment="CENTER">
+                                            <children>
+                                                <VBox>
+                                                    <children>
+                                                        <Label text="Min BTC" textFill="#c12727">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets bottom="6.0" />
+                                                            </VBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="minBtc" alignment="CENTER" editable="false" maxWidth="160.0">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </padding>
+                                                            <VBox.margin>
+                                                                <Insets />
+                                                            </VBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                    <HBox.margin>
+                                                        <Insets right="16.0" />
+                                                    </HBox.margin>
+                                                </VBox>
+                                                <VBox>
+                                                    <children>
+                                                        <Label text="Max BTC" textFill="#c12727">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets bottom="6.0" />
+                                                            </VBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="maxBtc" alignment="CENTER" editable="false" maxWidth="160.0">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </padding>
+                                                            <VBox.margin>
+                                                                <Insets />
+                                                            </VBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                    <HBox.margin>
+                                                        <Insets right="16.0" />
+                                                    </HBox.margin>
+                                                </VBox>
+                                                <VBox>
+                                                    <children>
+                                                        <Label text="XMR Price (Rate)" textFill="#c12727">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets bottom="6.0" />
+                                                            </VBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="asbPrice" alignment="CENTER" editable="false" maxWidth="160.0">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </padding>
+                                                        </TextField>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets bottom="12.0" />
+                                            </VBox.margin>
+                                        </HBox>
+
+                                        <HBox alignment="CENTER">
+                                            <children>
+                                                <VBox>
+                                                    <children>
+                                                        <Label text="Total XMR Balance" textFill="#c12727">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets bottom="6.0" />
+                                                            </VBox.margin>
+                                                        </Label>
+                                                        <TextField alignment="CENTER" editable="false" maxWidth="160.0" fx:id="xmrBalance">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </padding>
+                                                            <VBox.margin>
+                                                                <Insets />
+                                                            </VBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                    <HBox.margin>
+                                                        <Insets right="16.0" />
+                                                    </HBox.margin>
+                                                </VBox>
+                                                <VBox>
+                                                    <children>
+                                                        <Label text="Unlocked XMR Balance" textFill="#c12727">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets bottom="6.0" />
+                                                            </VBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="unlockedXmr" alignment="CENTER" editable="false" maxWidth="160.0">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </padding>
+                                                            <VBox.margin>
+                                                                <Insets />
+                                                            </VBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                    <HBox.margin>
+                                                        <Insets right="16.0" />
+                                                    </HBox.margin>
+                                                </VBox>
+                                                <VBox>
+                                                    <children>
+                                                        <Label text="Locked XMR Balance" textFill="#c12727">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets bottom="6.0" />
+                                                            </VBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="lockedXmr" alignment="CENTER" editable="false" maxWidth="160.0">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </padding>
+                                                        </TextField>
+                                                    </children>
+                                                    <HBox.margin>
+                                                        <Insets />
+                                                    </HBox.margin>
+                                                </VBox>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets bottom="12.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox alignment="CENTER">
+                                            <children>
+                                                <VBox>
+                                                    <children>
+                                                        <Label text="Deposit BTC Blance" textFill="#c12727">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets bottom="6.0" />
+                                                            </VBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="depositBtc" alignment="CENTER" editable="false" maxWidth="160.0">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </padding>
+                                                            <VBox.margin>
+                                                                <Insets />
+                                                            </VBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                    <HBox.margin>
+                                                        <Insets right="16.0" />
+                                                    </HBox.margin>
+                                                </VBox>
+                                                <VBox>
+                                                    <children>
+                                                        <Label text="Premix BTC Balance" textFill="#c12727">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets bottom="6.0" />
+                                                            </VBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="premixBtcBalance" alignment="CENTER" editable="false" maxWidth="160.0">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </padding>
+                                                        </TextField>
+                                                    </children>
+                                                    <HBox.margin>
+                                                        <Insets right="16.0" />
+                                                    </HBox.margin>
+                                                </VBox>
+                                                <VBox>
+                                                    <children>
+                                                        <Label text="Postmix BTC Balance" textFill="#c12727">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets bottom="6.0" />
+                                                            </VBox.margin>
+                                                        </Label>
+                                                        <TextField fx:id="postmixBtc" alignment="CENTER" editable="false" maxWidth="160.0">
+                                                            <font>
+                                                                <Font name="Arial Bold" size="14.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                            </padding>
+                                                            <VBox.margin>
+                                                                <Insets />
+                                                            </VBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets bottom="12.0" />
+                                            </VBox.margin>
+                                        </HBox>
+
+                                        <HBox alignment="CENTER">
+                                            <VBox>
+                                                <children>
+                                                    <Label text="Peer ID" textFill="#c12727">
+                                                        <font>
+                                                            <Font name="Arial Bold" size="14.0" />
+                                                        </font>
+                                                        <VBox.margin>
+                                                            <Insets bottom="6.0" />
+                                                        </VBox.margin>
+                                                    </Label>
+                                                    <TextField fx:id="peerId" alignment="CENTER" editable="false" maxWidth="512.0" prefWidth="512.0">
+                                                        <font>
+                                                            <Font name="Arial Bold" size="12.0" />
+                                                        </font>
+                                                        <padding>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                        </padding>
+                                                        <VBox.margin>
+                                                            <Insets />
+                                                        </VBox.margin>
+                                                    </TextField>
+                                                </children>
+                                            </VBox>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" fx:id="xmrQR">
+                                    <HBox.margin>
+                                        <Insets left="55.0" right="55.0" top="29.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                            </children>
+                        </HBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </VBox>
+
+                <VBox fx:id="progressBox" alignment="CENTER" managed="false" visible="false">
+                    <ProgressBar fx:id="progressBar" prefHeight="39.0" prefWidth="822.0" progress="0.0">
+                        <VBox.margin>
+                            <Insets />
+                        </VBox.margin>
+                    </ProgressBar>
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                </VBox>
+                <VBox fx:id="offlineBox" alignment="CENTER">
+                    <Label alignment="CENTER" text="Offline" textAlignment="CENTER" textFill="WHITE">
+                        <font>
+                            <Font name="Arial Bold" size="36.0" />
+                        </font>
+                        <VBox.margin>
+                            <Insets />
+                        </VBox.margin>
+                    </Label>
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                </VBox>
+            </children>
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+        </VBox>
+    </children>
+</GridPane>
